@@ -1,18 +1,22 @@
-// Last updated: 7/27/2026, 8:55:58 PM
+// Last updated: 7/27/2026, 9:17:04 PM
 1class Solution {
-2    public long countVowels(String str) {
-3        long s=0;
-4		int n=str.length();
-5		for(int i=0;i<str.length();i++){
-6		    char c = str.charAt(i);
-7             if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
-8                s += (long)(i + 1) * (n - i);
-9          }
-10		   
-11		
-12		    
-13		}
-14		return s;
-15        
-16    }
-17}
+2    public String reversePrefix(String word, char ch) {
+3
+4		int index =0;
+5		for(int i=0;i<word.length();i++){
+6		   index= word.indexOf(ch);
+7		    
+8		    
+9		}
+10		String str =word.substring(0,index+1);
+11		String rev ="";
+12		for(int i=str.length()-1;i>=0;i--){
+13		       rev+=str.charAt(i);
+14		}
+15		String ruslt =rev+word.substring(index+1);
+16        return ruslt;
+17		
+18	}
+19        
+20    }
+21
