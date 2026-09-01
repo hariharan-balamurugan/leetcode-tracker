@@ -1,10 +1,10 @@
-// Last updated: 9/1/2026, 12:25:00 PM
+// Last updated: 9/1/2026, 12:26:00 PM
 1class Solution {
 2    public List<String> summaryRanges(int[] nums) {
 3        List<String>list =new ArrayList<>();
 4        HashSet<Long>set =new HashSet<>();
-5        for(int i=0;i<nums.length;i++){
-6            set.add((long)nums[i]);
+5        for(long x:nums){
+6            set.add(x);
 7        }
 8        int c =0;
 9        for(int i=0;i<nums.length;i++){
