@@ -1,4 +1,4 @@
-// Last updated: 9/22/2026, 9:45:34 AM
+// Last updated: 9/22/2026, 10:09:03 AM
 1/**
 2 * Definition for a binary tree node.
 3 * public class TreeNode {
@@ -15,16 +15,30 @@
 14 * }
 15 */
 16class Solution {
-17    public TreeNode insertIntoBST(TreeNode root, int val) {
+17    public TreeNode deleteNode(TreeNode root, int key) {
 18        if(root==null){
-19            return new TreeNode(val);
+19            return null;
 20        }
-21        if(val<root.val){
-22            root.left =insertIntoBST(root.left,val);
-23        }else if(val>root.val){
-24            root.right =insertIntoBST(root.right,val);
-25        }
-26        return root;
-27        
-28    }
-29}
+21        if(key<root.val){
+22            root.left =deleteNode(root.left,key);
+23        }
+24        else if(key>root.val){
+25            root.right =deleteNode(root.right,key);
+26        }else{
+27            if(root.left==null){
+28                return root.right;
+29            }
+30            if(root.right==null){
+31                return root.left;
+32            }
+33           TreeNode ss =root.right;
+34            while(ss.left!=null){
+35                ss =ss.left;
+36            }
+37            root.val=ss.val;
+38            root.right=deleteNode(root.right,ss.val);
+39        }
+40        return root;
+41        
+42    }
+43}
