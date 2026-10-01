@@ -1,24 +1,19 @@
-// Last updated: 9/15/2026, 12:33:51 PM
+// Last updated: 10/1/2026, 2:11:59 PM
 1class Solution {
-2    public String orderlyQueue(String s, int k) {
-3        if(k==1){
-4            String ans =s;
-5            for(int i=1;i<s.length();i++){
-6                String temp =s.substring(i)+s.substring(0,i);
-7                if(temp.compareTo(ans)<0){
-8                    ans =temp;
-9                }
-10            }
-11            return ans;
-12        }
-13        char[] c =s.toCharArray();
-14        Arrays.sort(c);
-15        String str ="";
-16        for(char x:c){
-17            str+=x;
-18        }
-19
-20        return str;
-21        
-22    }
-23}
+2    public int minimumSwaps(int[] nums) {
+3        int z =0;
+4        for(int x:nums){
+5            if(x==0){
+6                z++;
+7            }
+8        }
+9        int count=0;
+10        for(int i =nums.length-z;i<nums.length;i++){
+11            if(nums[i]!=0){
+12                count++;
+13            }
+14        }
+15        return count;
+16        
+17    }
+18}
